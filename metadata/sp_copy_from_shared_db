@@ -45,6 +45,8 @@ try {
     whereAmI = 2;
     var sqlquery = "CREATE SCHEMA IF NOT EXISTS " + tgt_db + "." + tgt_schema + ";";
     snowflake.execute({sqlText: sqlquery});
+    var sqlquery = "CREATE SCHEMA IF NOT EXISTS " + tgt_db + "." + tmp_schema + ";";
+    snowflake.execute({sqlText: sqlquery});
 
     whereAmI = 3;
     var sqlquery = "SHOW TABLES IN SCHEMA " + src_db + "." + src_schema + ";";
