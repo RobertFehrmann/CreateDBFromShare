@@ -27,7 +27,7 @@ Setup of a test environment requires a couple different Snowflake accounts.
 
 ## Setup on Consumer/Replication Source
 1. Create a new database that will host the local copy for the shared dataset. To do so, open file setup/create_db.sql (or create the database directly in a Snowflake worksheet), update the database name and run all commands.
-1. Create all metadata objects via the files in the metadata directory. The files need to be executed in sequence indicated by the file prefix.
+1. Create all metadata objects via the files in the metadata directory. The files need to be executed in sequence indicated by the file prefix. Be sure to set the session context to the database you hae created in the previous step. When you get an error message while creating sp_copy_from_shared_db, scroll to the end of the file and then run it again.
 
 ## Setup on Replication Target/Provider
 
