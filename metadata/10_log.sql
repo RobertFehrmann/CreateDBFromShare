@@ -1,3 +1,4 @@
+create schema if not exists metadata;
 create or replace table metadata.log (
    id integer AUTOINCREMENT (0,1)
    ,create_ts timestamp_ltz default current_timestamp

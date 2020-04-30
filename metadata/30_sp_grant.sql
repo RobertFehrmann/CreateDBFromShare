@@ -1,3 +1,4 @@
+create schema if not exists metadata;
 CREATE OR REPLACE PROCEDURE METADATA.SP_GRANT(i_tgt_db string, i_tgt_schema string, i_share string)
   RETURNS ARRAY
   LANGUAGE javascript
