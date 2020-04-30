@@ -22,8 +22,13 @@ The procedure tracks its progress in an array of strings. That "log" along with 
 Setup of a test environment requires a couple different Snowflake accounts.
 
 1. Originator: This is the Snowflake account that originally shares a dataset via [Snowflake Secure Data Sharing](https://docs.snowflake.com/en/user-guide/data-sharing-intro.html). 
-1. Consumer/Replication Source: This is the Snowflake account that consumes the dataset from the Provider. Secondly, this account creates a local copy and replicates the dataset to the replication target. Please review Snowflake's documentation for setting up [replciation] (https://docs.snowflake.com/en/user-guide/database-replication-failover.html)
+1. Consumer/Replication Source: This is the Snowflake account that consumes the dataset from the Provider. Secondly, this account creates a local copy and replicates the dataset to the replication target. Please review Snowflake's documentation for setting up [replication](https://docs.snowflake.com/en/user-guide/database-replication-failover.html)
 1. Replication Target/Provider: This is the Snowflake account that receives the  replicated copy from the replication source. It also is the account that shares the dataset, for instance into a VPS environment
 
-## Setup on the Consumer/Replication Source
-1. open file install/setup.sql (or create the database directly in a Snowflake worksheet), update the database name and run all commands. This will create a new database
+## Setup on Consumer/Replication Source
+1. Create a new database that will host the local copy for the shared dataset. To do so, open file setup/create_db.sql (or create the database directly in a Snowflake worksheet), update the database name and run all commands.
+1. Create all metadata objects via the files in the metadata directory. The files need to be executed in sequence indicated by the file prefix.
+
+## Setup on Replication Target/Provider
+
+
